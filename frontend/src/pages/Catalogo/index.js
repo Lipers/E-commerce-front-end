@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./styles.css";
 import Header from "../../components/Header";
 
 export default function Catalogo() {
@@ -13,7 +12,6 @@ export default function Catalogo() {
     axios
       .get("https://5d6da1df777f670014036125.mockapi.io/api/v1/product")
       .then(({ data }) => {
-        console.log(data);
         setProdutos(
           data.filter(
             (product) => !localStorage.getItem("ids")?.includes(product.id)
